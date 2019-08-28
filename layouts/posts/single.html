@@ -1,7 +1,7 @@
 {{ define "main" }}
     <main class="post">
         <div class="post-author">
-            <img src="/author.png">
+            <img src="{{ .Params.Author.images }}">
             <p>{{ .Params.Author.name }}</p>                
         </div>
         <div class="post-info">
