@@ -89,6 +89,14 @@
     }
   }
 
+  &-author {
+    img {
+      border-radius: 50%;
+      width: 32em;
+      height: 32em;
+    }
+  }
+
   .flag {
     border-radius: 50%;
     margin: 0 5px;
