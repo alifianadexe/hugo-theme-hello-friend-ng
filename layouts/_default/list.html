@@ -1,17 +1,19 @@
 {{ define "main" }}
     <main class="posts">
         <h1>{{ .Title }}</h1>
-
+        
         {{- if .Content }}
             <div class="content">{{ .Content }}</div>
         {{- end }}
 
-        {{- range .Data.Pages.GroupByDate "2006" }}
+        {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+            {{ if eq "categories" $taxonomyname }}
+                {{ range $key, $value := $taxonomy }}   
             <div class="posts-group">
-                <div class="post-year">{{ .Key }}</div>
+                <div class="post-year">{{ $key }}</div>
 
                 <ul class="posts-list">
-                    {{- range .Pages }}
+                    {{- range $value.Pages }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>
@@ -21,6 +23,8 @@
                     {{- end }}
                 </ul>
             </div>
+                {{- end }}
+            {{- end }}    
         {{- end }}
     </main>
 {{ end }}
