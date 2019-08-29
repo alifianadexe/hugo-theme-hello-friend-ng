@@ -6,7 +6,7 @@
             <div class="content">{{ .Content }}</div>
         {{- end }}
         
-        {- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+        {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyname }}
                 {{ range $key, $value := $taxonomy }}
             <ul class="list">
