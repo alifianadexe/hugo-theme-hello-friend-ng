@@ -9,7 +9,6 @@
         {{- range .Data.Pages.GroupByDate "2006" }}
             <div class="posts-group">
                 <div class="post-year">{{ .Key }}</div>
-
                 <ul class="posts-list">
                     {{- range .Pages }}
                         <li class="post-item">
