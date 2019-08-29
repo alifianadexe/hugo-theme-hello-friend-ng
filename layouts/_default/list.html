@@ -10,7 +10,7 @@
             {{ if eq "categories" $taxonomyname }}
                 {{ range $key, $value := $taxonomy }}
             <ul class="list">
-                <li><a href="/categories/{{ .$key }}">{{ $key }}</a></li>
+                <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
             </ul>
                 {{- end }}
             {{- end }}    
