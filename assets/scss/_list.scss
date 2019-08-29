@@ -36,10 +36,25 @@
 
   &-menu{
     ul{
+      list-style-type: none;
       -webkit-column-count: 3; /* Chrome, Safari, Opera */
       -moz-column-count: 3; /* Firefox */
-      column-count: 3;
+      column-count: 4;
+      
+      @media #{$media-size-tablet} {
+        column-count: 3;
+      }
+
+      @media #{$media-size-phone} {
+        column-count: 2;
+      }
+  
     }
+
+    li{
+      font-size: 11px;
+    }
+    
   }
 
   .post {
