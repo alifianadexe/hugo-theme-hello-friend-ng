@@ -19,8 +19,8 @@
             <div class="content">{{ .Content }}</div>
         {{- end }}
 
-        <div class="posts-menu">
-            <p class="subtitle fancy"><span>here some post</span></p>
+        <div class="posts-menu" style="margin-top: 3em;">
+            <p class="subtitle fancy"><span>and here some post</span></p>
         </div>
         {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyname }}
