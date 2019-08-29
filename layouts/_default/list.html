@@ -4,11 +4,11 @@
         <div class="posts-menu">
             {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
                 {{ if eq "categories" $taxonomyname }}
+                <ul>   
                     {{ range $key, $value := $taxonomy }}
-                <ul>
-                    <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
-                </ul>
+                        <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
                     {{- end }}
+                </ul>    
                 {{- end }}    
             {{- end }}
         </div>
