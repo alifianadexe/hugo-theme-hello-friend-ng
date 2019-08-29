@@ -1,21 +1,25 @@
 {{ define "main" }}
     <main class="posts">
+        
+        <div class="post-menu">
+            {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+                {{ if eq "categories" $taxonomyname }}
+                    {{ range $key, $value := $taxonomy }}
+                <ul>
+                    <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
+                </ul>
+                    {{- end }}
+                {{- end }}    
+            {{- end }}
+        </div>
+
         <h1>{{ .Title }}</h1>
         
         {{- if .Content }}
             <div class="content">{{ .Content }}</div>
         {{- end }}
         
-        {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-            {{ if eq "categories" $taxonomyname }}
-                {{ range $key, $value := $taxonomy }}
-            <ul class="list">
-                <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
-            </ul>
-                {{- end }}
-            {{- end }}    
-        {{- end }}
-
+       
         {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyname }}
                 {{ range $key, $value := $taxonomy }}   

@@ -4,7 +4,7 @@
   text-align: left;
   padding: 20px;
   margin: 20px auto;
-
+  
   @media #{$media-size-tablet} {
     max-width: 660px;
   }
@@ -32,6 +32,12 @@
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+
+  &-menu{
+    ul{
+      column-count: 3;
+    }
   }
 
   .post {
