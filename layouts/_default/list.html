@@ -5,6 +5,15 @@
         {{- if .Content }}
             <div class="content">{{ .Content }}</div>
         {{- end }}
+        
+        {{ $taxo := "categories" }}
+        <ul class="{{ $taxo }}">
+            {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
+                {{ range .Pages }}
+                    <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
 
         {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyname }}
