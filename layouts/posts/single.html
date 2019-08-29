@@ -1,9 +1,5 @@
 {{ define "main" }}
     <main class="post">
-        <div class="post-author">
-            <img src="{{ .Params.Author.images }}">
-            <a href="/{{ .Params.Author.name }}"> {{ .Params.Author.name }} </a>                
-        </div>
         <div class="post-info">
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>{{ i18n "readingTime" .Page.ReadingTime }}
 
@@ -39,6 +35,13 @@
         </article>
 
         <hr />
+        
+        <div class="post-author">
+                <img src="{{ .Params.Author.images }}">
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><a href="/{{ .Params.Author.name }}"> {{ .Params.Author.name }} </a></p>                
+            </div>
+    
+        <hr />            
 
         <div class="post-info">
             {{- with .Params.tags }}
