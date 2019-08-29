@@ -14,13 +14,14 @@
             {{- end }}
 
         </div>
-
         
         {{- if .Content }}
             <div class="content">{{ .Content }}</div>
         {{- end }}
-        
-        
+
+        <div class="posts-menu">
+            <p class="subtitle fancy"><span>here some post</span></p>
+        </div>
         {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
             {{ if eq "categories" $taxonomyname }}
                 {{ range $key, $value := $taxonomy }}   
