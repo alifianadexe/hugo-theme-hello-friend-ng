@@ -69,10 +69,11 @@
       height: 5px;
       border-bottom: 1px solid #252627;
       top: 0;
-      width: 290px;
+      width: 40%;
       .dark-theme & {
         border-bottom: 1px solid #a9a9b3;
       }
+
     }
     .fancy span:before {
       right: 100%;
