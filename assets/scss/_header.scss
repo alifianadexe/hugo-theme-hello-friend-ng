@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: fixed;
   padding: 20px;
-
+  transition: top 0.2s ease-in-out;
+  
   .dark-theme & {
     background: #252627;
   }
