@@ -4,6 +4,7 @@ date: {{ .Date }}
 draft: true
 toc: false
 images:
+authors:
 tags:
   - untagged
 ---
