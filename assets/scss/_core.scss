@@ -88,13 +88,10 @@ a {
 img {
   display: block;
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
   &.left {
-    margin-right: auto;
-  }
-
-  &.center {
-    margin-left: auto;
     margin-right: auto;
   }
 
