@@ -45,3 +45,24 @@
 .theme-toggler {
   fill: currentColor;
 }
+
+.theme-search{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  margin-right:1em;
+  margin-left:1em;
+  cursor:pointer;
+  @media #{$media-size-phone} {
+    margin-right:0.5em;
+  }
+  @media #{$media-size-tablet} {
+    margin-right:0.5em;
+  }
+}
+
+.theme-searching{
+  fill:currentColor
+}
+
