@@ -6,7 +6,7 @@
             <div class="content">{{ .Content }}</div>
         {{- end }}
         
-        {{- range .Data.Pages.GroupByDate "2006" }}
+        {{- range (.Data.Pages.GroupByDate "2006").ByDate.Reverse }}
             <div class="posts-group">
                 <div class="post-year">{{ .Key }}</div>
                 <ul class="posts-list">
