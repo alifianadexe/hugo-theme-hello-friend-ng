@@ -6,11 +6,11 @@
             <div class="content">{{ .Content }}</div>
         {{- end }}
         
-        {{- range (.Data.Pages.GroupByDate "2006").ByDate.Reverse }}
+        {{- range .Data.Pages.GroupByDate "2006" }}
             <div class="posts-group">
                 <div class="post-year">{{ .Key }}</div>
                 <ul class="posts-list">
-                    {{- range .Pages }}
+                    {{- range .Pages.ByDate.Reverse }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>
