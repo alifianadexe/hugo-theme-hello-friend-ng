@@ -10,7 +10,7 @@
             <div class="posts-group">
                 <div class="post-year">{{ .Key }}</div>
                 <ul class="posts-list">
-                    {{- range .Pages.ByDate.Reverse }}
+                    {{- range .Pages.ByDate }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>
