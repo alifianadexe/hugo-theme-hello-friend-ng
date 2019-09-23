@@ -1,46 +1,38 @@
 {{ define "main" }}
-    <main class="posts">
-        
-        <div class="posts-menu">
-            <p class="subtitle fancy"><span>here some list</span></p>
-            {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-                {{ if eq "categories" $taxonomyname }}
-                <ul>   
-                    {{ range $key, $value := $taxonomy }}
-                        <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
-                    {{- end }}
-                </ul>    
-                {{- end }}    
-            {{- end }}
-
-        </div>
-        
-        {{- if .Content }}
-            <div class="content">{{ .Content }}</div>
-        {{- end }}
-
-        <div class="posts-menu" style="margin-top: 3em;">
-            <p class="subtitle fancy"><span>and here some post</span></p>
-        </div>
-        {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-            {{ if eq "categories" $taxonomyname }}
-                {{ range $key, $value := $taxonomy }}   
-            <div class="posts-group">
-                <div class="post-year">{{ $key }}</div>
-
-                <ul class="posts-list">
-                    {{- range $value.Pages }}
-                        <li class="post-item">
-                            <a href="{{.Permalink}}">
-                                <span class="post-title">{{.Title}}</span>
-                                <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
-                            </a>
-                        </li>
-                    {{- end }}
-                </ul>
+<main class="posts">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <a href="/categories/laravel">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="/img/laravel.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Laravel</h3>
+                        </div>
+                        <ul class="social">
+                            <li></li>
+                        </ul>
+                    </div>
+                </a>
             </div>
-                {{- end }}
-            {{- end }}    
-        {{- end }}
-    </main>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <a href="/categories/electron">
+                    <div class="our-team">
+                        <div class="picture">
+                            <img class="img-fluid" src="/img/electron.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Electron</h3>
+                        </div>
+                        <ul class="social">
+                            <li></li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
 {{ end }}

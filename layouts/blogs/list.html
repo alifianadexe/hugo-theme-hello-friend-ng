@@ -1,35 +1,19 @@
 {{ define "main" }}
     <main class="posts">
         
-        <div class="posts-menu">
-            <p class="subtitle fancy"><span>here some list</span></p>
-            {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-                {{ if eq "categories" $taxonomyname }}
-                <ul>   
-                    {{ range $key, $value := $taxonomy }}
-                        <li><a href="/categories/{{ $key }}">{{ $key }}</a></li>
-                    {{- end }}
-                </ul>    
-                {{- end }}    
-            {{- end }}
-
-        </div>
-        
         {{- if .Content }}
             <div class="content">{{ .Content }}</div>
         {{- end }}
 
         <div class="posts-menu" style="margin-top: 3em;">
-            <p class="subtitle fancy"><span>and here some post</span></p>
+            <p class="subtitle fancy"><span><i>"isi dan opini"</i></span></p>
         </div>
-        {{- range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-            {{ if eq "categories" $taxonomyname }}
-                {{ range $key, $value := $taxonomy }}   
+        {{- range .Data.Pages.GroupBy "Section" }}
             <div class="posts-group">
-                <div class="post-year">{{ $key }}</div>
+                <div class="post-year">{{ .Key }}</div>
 
                 <ul class="posts-list">
-                    {{- range $value.Pages }}
+                    {{- range .Pages }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>
@@ -39,8 +23,6 @@
                     {{- end }}
                 </ul>
             </div>
-                {{- end }}
-            {{- end }}    
-        {{- end }}
+        {{ end }}
     </main>
 {{ end }}
