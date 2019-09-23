@@ -180,8 +180,9 @@ pre {
 
 blockquote {
   border-left: 2px solid;
-  margin: 40px;
+  margin: 20px;
   padding: 10px 20px;
+  font-style: italic;
 
   @media #{$media-size-phone} {
     margin: 10px;
