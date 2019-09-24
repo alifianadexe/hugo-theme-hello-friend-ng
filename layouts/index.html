@@ -1,16 +1,30 @@
 {{ define "main" }}
     <main aria-role="main">
         <div>
+            <div class="text-center">
+                <img alt="Atas Nama Bangsa Indonesia" class="img-logo img-fluid" src="/img/logo.png">
+            </div>
             <h1>{{ .Site.Title }}</h1>
-
             {{- with .Site.Params.homeSubtitle }}
                 <p>{{.}}</p>
             {{- end }}
+            
             {{- with .Site.Params.social }}
                 <div>
                     {{ partial "social-icons.html" . }}
                 </div>
             {{- end }}  
+
+            <div id="container">
+                <a href="/tutorials">
+                    <button class="button-index learn-more">
+                        <div class="circle">
+                        <span class="icon arrow"></span>
+                        </div>
+                        <p class="button-text">Let Start</p>
+                    </button>
+                </a>
+            </div>
         </div>
     </main>
 {{ end }}

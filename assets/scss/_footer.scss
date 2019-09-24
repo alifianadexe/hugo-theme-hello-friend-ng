@@ -1,33 +1,12 @@
 .footer {
+  display: inline;
   padding: 40px 20px;
-  flex-grow: 0;
+  align-items: center;
+  font-size: 1rem;
   color: $light-color-secondary;
 
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 760px;
-    max-width: 100%;
-
-    @media #{$media-size-tablet} {
-      flex-direction: column;
-    }
-  }
 
   &__content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 1rem;
-    color: $light-color-secondary;
-
-    @media #{$media-size-tablet} {
-      flex-direction: column;
-      margin-top: 10px;
-    }
-
     & > *:not(:last-child) {
       border-right: 1px solid;
       padding: 0 15px;
@@ -35,6 +14,11 @@
       @media #{$media-size-tablet} {
         border: none;
       }
+    }
+    
+    @media #{$media-size-tablet} {
+      text-align: center;
+      margin-top: 1em;
     }
 
     & > *:last-child {

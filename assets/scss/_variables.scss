@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /* light theme color */
 $light-background: #fff;
 $light-background-secondary: #eaeaea;
@@ -16,6 +17,13 @@ $dark-border-color: #4a4b50;
 
 $media-size-phone: "(max-width: 684px)";
 $media-size-tablet: "(max-width: 900px)";
+
+/* for button-index */
+$bg: transparent;
+$white: #fff;
+$white-secondary:#c0c0c0;
+$black: #292a2d;
+
 
 /* variables for js, must be the same as these in @custom-media queries */
 :root {

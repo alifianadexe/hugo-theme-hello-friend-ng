@@ -97,3 +97,51 @@ a.button {
     }
   }
 }
+
+#but-to-up {
+  display: inline-block;
+  background-color: #5c5c5c;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+
+  &::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 40px;
+    color: #fff;
+    .dark-theme &{
+      color: $dark-background;
+    }
+  }
+  
+  &:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  
+  &:active {
+    background-color: #555;
+  }
+  
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dark-theme &{
+    background-color: $dark-color;
+  }
+}
+
