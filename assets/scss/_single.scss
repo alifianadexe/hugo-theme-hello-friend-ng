@@ -47,6 +47,9 @@
       color : #3694ff !important;
       text-decoration: none;
     }
+    @media #{$media-size-phone} {
+      text-align: left;
+    }
   }
 
   &-cover {
