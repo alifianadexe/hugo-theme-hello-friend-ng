@@ -11,7 +11,7 @@
                 <div class="post-year">{{ .Key }}</div>
                 <ul class="posts-list">
                 {{- range .Pages }}
-                        {{ if eq .Type "post" }}
+                        {{ if eq .Params.status "publish" }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>
