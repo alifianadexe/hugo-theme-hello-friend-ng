@@ -13,7 +13,7 @@
                 <div class="post-year">{{ .Key }}</div>
 
                 <ul class="posts-list">
-                    {{- range .Pages }}
+                    {{- range where .Pages "Params.type" "==" "post" }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>

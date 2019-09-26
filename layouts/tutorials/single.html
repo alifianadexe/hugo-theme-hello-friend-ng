@@ -12,7 +12,8 @@
 
             </p>
         </div>
-
+        {{- range .Data.Pages.GroupByDate "2006" }}
+        {{- end }}
         <article>
             <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
 
