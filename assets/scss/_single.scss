@@ -278,13 +278,15 @@
 
     .dark-theme & {
       color: #c0c0c0!important;
+      border-left: 0.3em solid #c0c0c0!important; 
     }
 
   }
   
   .dark-theme & {
     background: #1e1f21;
-    color: $dark-color !important;  
+    color: $dark-color !important;
+      
   }
   
   @media #{$media-size-tablet} {
