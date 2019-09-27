@@ -1,19 +1,5 @@
 {{ define "main" }}
-    <main class="post" style='margin-left: 19%;'>
-        {{ $title := .Title }}
-        {{ $series := $.Page.Params.series }}
-        <div class="sidenav">
-            <h4>{{ $series }}</h4>
-            {{ range $ind,$art := $.Site.Pages.ByDate }}
-                {{ if eq $art.Params.series $series }}
-                    {{ if eq $title $art.Params.title }}
-                        <a href="{{ $art.Permalink }}" class="active">{{ $art.Params.shortcode }}</a>
-                    {{ else }}
-                        <a href="{{ $art.Permalink }}">{{ $art.Params.shortcode }}</a>
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-        </div>
+    <main class="post post-tutorial" >
         <div class="post-info">
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>{{ i18n "readingTime" .Page.ReadingTime }}
 
@@ -56,16 +42,30 @@
                 {{ $finalContent }}
             </div>
         </article>
-
+                    
+        {{ $title := .Title }}
+        {{ $series := $.Page.Params.series }}
+        <div class="sidenav">
+            <h4>{{ $series }}</h4>
+            {{ range $ind,$art := $.Site.Pages.ByDate }}
+                {{ if eq $art.Params.series $series }}
+                    {{ if eq $title $art.Params.title }}
+                        <a href="{{ $art.Permalink }}" class="active">{{ $art.Params.shortcode }}</a>
+                    {{ else }}
+                        <a href="{{ $art.Permalink }}">{{ $art.Params.shortcode }}</a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+        
         <hr />
         
         <div class="post-author">
             <img alt="{{ .Params.Author.name }}" src="{{ .Params.Author.images }}">
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><a href="/authors/{{ .Params.authors }}">{{ .Params.Author.name }}</a></p>                
         </div>
-    
-        <hr />            
-
+        
+        <hr />
         <div class="post-info">
             {{- with .Params.tags }}
                 <p>

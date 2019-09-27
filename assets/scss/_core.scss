@@ -20,7 +20,7 @@ body {
   font-size: 1.1rem;
   line-height: 1.54;
   background-color: $light-background;
-  color: $light-color !important;
+  color: $light-color;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
@@ -84,6 +84,7 @@ h4 {
 
 a {
   color:inherit !important;
+  text-decoration: none;
 }
 
 img {
@@ -141,7 +142,7 @@ code {
   margin: 0 2px;
   border-radius: 5px;
   font-size: .95rem;
-
+  color:#e83e8c;
   .dark-theme & {
     background: $dark-background-secondary;
   }
@@ -229,7 +230,7 @@ ol ol {
   flex: 1 auto;
   align-items: center;
   justify-content: center;
-  margin: 50px 0;
+  margin: 25px 0;
 
   @media #{$media-size-phone} {
     margin-top: 0;
