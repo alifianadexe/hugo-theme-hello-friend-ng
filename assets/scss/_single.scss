@@ -4,7 +4,7 @@
   text-align: left;
   padding: 20px;
   margin: 20px auto;
-
+  
   @media #{$media-size-tablet} {
     max-width: 600px;
   }
@@ -241,3 +241,43 @@
   }
   
 }
+
+.sidenav {
+  width: 19%;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  background: #fafafa;
+  overflow-x: hidden;
+  padding: 128px 0;
+  padding-left: 2em;
+  
+  a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 0.8em;
+    display: block;
+  }
+  
+  h4{
+    margin-bottom: 20px;  
+  }
+  
+  a:hover {
+    color: #376b96!important;
+  }
+  
+  .active {
+    color: #2e2e2e!important;
+    font-weight: 700;
+    border-left: 0.3em solid #2e2e2e!important; 
+  }
+  
+  @media #{$media-size-tablet} {
+    display: none;
+  }
+
+}
+
