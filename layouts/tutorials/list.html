@@ -1,21 +1,19 @@
 {{ define "main" }}
 <main class="posts">
         <div class="row">
-            <pre>
-                    {{ $sections := (.Site.GetPage "section" .Section).Sections }}
-                    {{ range $sections }}
-                        {{ $word := split .Page.Dir "\\" }}
-                        {{ $word }} <!-- or whatever -->
-                    {{ end }}
-            </pre>
+            {{ $sections := (.Site.GetPage "section" .Section).Sections }}
+            {{ range $sections }}
+                {{ $hasil := sub (len .Page.Dir) 11 }}
+                {{ $word := substr .Page.Dir 10 $hasil}}
+    
             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-                <a href="/categories/laravel">
+                <a href="/categories/{{ $word }}">
                     <div class="our-team">
                         <div class="picture">
-                            <img class="img-fluid" src="/img/laravel.png">
+                            <img class="img-fluid" src="/img/{{ $word }}.png">
                         </div>
                         <div class="team-content">
-                            <h3 class="name">Laravel</h3>
+                            <h3 class="name">{{ $word }}</h3>
                         </div>
                         <ul class="social">
                             <li></li>
@@ -23,36 +21,6 @@
                     </div>
                 </a>
             </div>
-            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-                <a href="/categories/electron">
-                    <div class="our-team">
-                        <div class="picture">
-                            <img class="img-fluid" src="/img/electron.png">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="name">Electron</h3>
-                        </div>
-                        <ul class="social">
-                            <li></li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-                    <a href="/categories/python">
-                        <div class="our-team">
-                            <div class="picture">
-                                <img class="img-fluid" src="/img/python.png">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="name">Python</h3>
-                            </div>
-                            <ul class="social">
-                                <li></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-        </div>
+            {{ end }}
 </main>
 {{ end }}
