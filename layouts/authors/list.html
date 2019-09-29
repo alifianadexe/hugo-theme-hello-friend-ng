@@ -1,25 +1,55 @@
 {{ define "main" }}
     <main class="posts">
-        <h1>{{ .Title }}</h1>
+        <div class="author-div">
+            <div class="author-img">
+                <img alt="{{ .Params.name }}" src="/img/{{ .Params.photo }}">
+            </div>
+            <h2>{{ .Params.name }}</h2>
+            <p>{{ .Content }}</p>
+            <div class="author-footer">
+                    {{- with .Params.social }}
+                        {{ range . -}}
+                            &nbsp; <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+                        {{- end -}}
+                {{- end }}  
+            </div>
+        </div>
+        <div class="posts-menu" style="margin-top: 3em;">
+                <p class="subtitle fancy"><span><i>"Berikut Hasil Penuangan Pikiran Beliau"</i></span></p>
+        </div>
         
-        {{- if .Content }}
-            <div class="content">{{ .Content }}</div>
-        {{- end }}
-        
-        {{- range .Data.Pages.GroupByDate "2006" }}
-            <div class="posts-group">
-                <div class="post-year">{{ .Key }}</div>
-                <ul class="posts-list">
-                    {{- range .Pages }}
+        {{ $scratch := newScratch }}
+        {{ $scratch.Set "series" "xxx" }}
+        {{ range sort .Data.Pages "Params.series"  }}
+            {{ if eq ($scratch.Get "series") .Params.series }}
+
+            {{ else }}
+                {{ $scratch.Set "series" .Params.series }}
+                <div class="posts-group">
+                    <div class="post-year">{{ $scratch.Get "series" }}</div>
+                    <ul class="posts-list">        
+                    {{ range where $.Data.Pages "Params.series" ($scratch.Get "series") }} 
+                        {{ if .Params.status }}
+                            {{ if eq .Params.status "publish" }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
                                 <span class="post-title">{{.Title}}</span>
                                 <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
                             </a>
                         </li>
-                    {{- end }}
-                </ul>
-            </div>
-        {{- end }}
+                            {{ end }}
+                        {{ else }}
+                        <li class="post-item">
+                            <a href="{{.Permalink}}">
+                                <span class="post-title">{{.Title}}</span>
+                                <span clas  s="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    {{ end }}
+                    </ul>
+                </div>
+             {{ end }}
+        {{ end}}
     </main>
 {{ end }}

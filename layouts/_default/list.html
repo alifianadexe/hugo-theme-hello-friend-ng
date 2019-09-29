@@ -8,7 +8,7 @@
         
         {{ $scratch := newScratch }}
         {{ $scratch.Set "series" "xxx" }}
-        {{ range .Data.Pages }}
+        {{ range sort .Data.Pages "Params.series" }}
             {{ if eq ($scratch.Get "series") .Params.series }}
 
             {{ else }}

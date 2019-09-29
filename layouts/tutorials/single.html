@@ -49,17 +49,29 @@
             <h4>{{ $series }}</h4>
             {{ range $ind,$art := $.Site.Pages.ByDate }}
                 {{ if eq $art.Params.series $series }}
-                    {{ if eq $title $art.Params.title }}
-                        <a href="{{ $art.Permalink }}" class="active">{{ $art.Params.shortcode }}</a>
-                    {{ else }}
-                        <a href="{{ $art.Permalink }}">{{ $art.Params.shortcode }}</a>
+                    {{ if eq .Params.status "publish" }}
+                        {{ if eq $title $art.Params.title }}
+                            <a href="{{ $art.Permalink }}" class="active">{{ $art.Params.shortcode }}</a>
+                        {{ else }}
+                            <a href="{{ $art.Permalink }}">{{ $art.Params.shortcode }}</a>
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             {{ end }}
         </div>
         
         <hr />
-        
+        {{- with .Params.sumber }}
+        <div class="post-info">
+            <h4>Referensi</h4>
+            <ul>
+                {{- range . -}}
+                    <a href="{{ . }}"><li>{{ . }}</li></a>
+                {{- end -}}
+            </ul>
+        </div>
+        <hr />
+        {{ end }}
         <div class="post-author">
             <img alt="{{ .Params.Author.name }}" src="{{ .Params.Author.images }}">
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><a href="/authors/{{ .Params.authors }}">{{ .Params.Author.name }}</a></p>                
