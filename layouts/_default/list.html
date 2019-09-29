@@ -16,7 +16,7 @@
                 <div class="posts-group">
                     <div class="post-year">{{ $scratch.Get "series" }}</div>
                     <ul class="posts-list">        
-                    {{ range where $.Data.Pages "Params.series" ($scratch.Get "series") }} 
+                    {{ range sort (where $.Data.Pages "Params.series" ($scratch.Get "series")) "Params.date" "asc"}} 
                         {{ if .Params.status }}
                             {{ if eq .Params.status "publish" }}
                         <li class="post-item">
