@@ -8,9 +8,12 @@
             {{- with .Site.Params.homeSubtitle }}
                 <p>{{.}}</p>
             {{- end }}
+            {{- with .Site.Params.homeQuotes }}
+                <p class="border-left"><b>| </b><i>{{.}}</i><b> |</b></p>
+            {{- end }}
             
             {{- with .Site.Params.social }}
-                <div>
+                <div class="social-media">
                     {{ partial "social-icons.html" . }}
                 </div>
             {{- end }}  
