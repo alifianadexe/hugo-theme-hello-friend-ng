@@ -90,6 +90,7 @@ a {
 img {
   display: block;
   max-width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -216,6 +217,25 @@ ol ol {
   list-style-type: lower-alpha;
 }
 
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th{
+  text-align: center;
+  padding:8px;
+}
+
+td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
 .container {
   flex: 1;
   display: flex;
@@ -236,6 +256,8 @@ ol ol {
     margin-top: 0;
   }
 }
+
+
 
 hr {
   width: 100%;
