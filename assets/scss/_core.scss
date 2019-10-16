@@ -217,24 +217,41 @@ ol ol {
   list-style-type: lower-alpha;
 }
 
+<<<<<<< HEAD
 table{
+=======
+table {
+>>>>>>> 781d278e3484903bbaf8f63c267511d4dabddd48
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   border: 1px solid #ddd;
 }
 
+<<<<<<< HEAD
 th{
   text-align: center;
   padding:8px;
 }
 
 td {
+=======
+th, td {
+>>>>>>> 781d278e3484903bbaf8f63c267511d4dabddd48
   text-align: center;
   padding: 8px;
 }
 
+<<<<<<< HEAD
 tr:nth-child(even){background-color: #f2f2f2}
+=======
+tr:nth-child(even){
+  background-color: #f2f2f2;
+  .dark-theme & {
+    background-color: #2e3035;
+  }
+}
+>>>>>>> 781d278e3484903bbaf8f63c267511d4dabddd48
 
 .container {
   flex: 1;
