@@ -33,6 +33,7 @@ body {
 
   @media #{$media-size-phone} {
     font-size: 1rem;
+    display: block;
   }
 
   &.dark-theme {
