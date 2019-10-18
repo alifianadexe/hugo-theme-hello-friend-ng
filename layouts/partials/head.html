@@ -6,7 +6,7 @@
 <meta name="description"
     content="{{ if .IsHome }}{{ .Site.Params.homeSubtitle }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
 <meta name="keywords" content="{{ .Site.Params.keywords }}" />
-<meta name="robots" content="noodp" />
+<meta name="robots" content= "index, follow">
 <link rel="canonical" href="{{ .Permalink }}" />
 
 {{ block "title" . }}
