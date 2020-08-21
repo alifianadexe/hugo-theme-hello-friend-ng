@@ -2,7 +2,7 @@
 {{ $menu := resources.Get "js/menu.js" }}
 {{ $theme := resources.Get "js/theme.js" }}
 {{ $secureJS := slice $main $menu $theme | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 
