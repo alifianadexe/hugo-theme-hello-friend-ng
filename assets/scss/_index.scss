@@ -128,5 +128,25 @@
     grid-area: main;
     align-self: center;
     justify-self: center;
+
+    .theme-arrow{
+      align-self: flex-end;
+      animation-duration: 1.2s;
+      animation-iteration-count: infinite;
+      margin: 0 auto 0 auto;
+      transform-origin: bottom;
+      width: 100px;
+    }
+    
+    .bounce-7 {
+      animation-name: bounce-7;
+      animation-timing-function: ease;
+    }
+    
+    @keyframes bounce-7 {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
   }
 }
