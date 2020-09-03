@@ -6,33 +6,55 @@
 
     <div class="row">
         <div class="col-md-6">
-            <ul class="posts-list">
                 {{ range first 5 (where .Site.Pages "Section" "tutorials") }}   
-                    <p>{{ if eq .Params.status "publish"  }}</p>  
-                        <li class="post-item">
-                                <a href="{{.Permalink}}">
-                                    <span class="post-title">{{.Title}}</span>
-                                    <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
-                                </a>
-                        </li>
-                        {{- end}}
+                    {{ if eq .Params.status "publish"  }}  
+                    <a href="{{.Permalink}}">        
+                        <div class="row release">
+                                {{ with .Params.cover }}
+                                <div class="col-md-6 release-img">    
+                                    <img alt="{{ . }}" src="/post/{{ . }}" class="post-cover" />
+                                </div>
+                                {{ else }}
+                                <div class="col-md-6 release-img">
+                                    <img alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png">
+                                </div>    
+                                {{ end }}
+                                <div class="release-info">
+                                    <h5 class="release-title">{{.Title}}</h5>
+                                    <p class="release-day"><b>||</b> <i>{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</i></p>
+                                    <p>{{ .Params.Description }}</p>
+                                </div>
+                        </div>
+                    </a>
+                    <hr>
+                    {{- end}}
                 {{- end }}
-            </ul>
         </div>
 
         <div class="col-md-6">
-            <ul class="posts-list">
-                {{ range first 5 (where .Site.Pages "Section" "blogs") }}   
-                    <p>{{ if eq .Params.status "publish"  }}</p>  
-                        <li class="post-item">
-                                <a href="{{.Permalink}}">
-                                    <span class="post-title">{{.Title}}</span>
-                                    <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
-                                </a>
-                        </li>
-                        {{- end}}
-                {{- end }}
-            </ul>
+            {{ range first 5 (where .Site.Pages "Section" "blogs") }}   
+                {{ if eq .Params.status "publish"  }}  
+                <a href="{{.Permalink}}">        
+                    <div class="row release">
+                            {{ with .Params.cover }}
+                            <div class="col-md-6 release-img">    
+                                <img alt="{{ . }}" src="/post/{{ . }}" class="post-cover" />
+                            </div>
+                            {{ else }}
+                            <div class="col-md-6 release-img">
+                                <img alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png">
+                            </div>    
+                            {{ end }}
+                            <div class="release-info">
+                                <h5 class="release-title">{{.Title}}</h5>
+                                <p class="release-day"><b>||</b> <i>{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</i></p>
+                                <p>{{ .Params.Description }}</p>
+                            </div>
+                    </div>
+                </a>
+                <hr>
+                {{- end}}
+            {{- end }}
         </div>
     </div>
     
