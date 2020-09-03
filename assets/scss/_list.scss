@@ -241,8 +241,21 @@
 }
 
 .release{
+  
+  @media #{$media-size-phone} {
+    text-align: center;
+  }
+
   &-img{
+        
     img{
+      
+    @media #{$media-size-phone} {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1em;
+    }
+
       width: 10em;
       height: 10em;
       object-fit: cover;
@@ -250,20 +263,28 @@
       margin: 0;
       max-width: 100%;
     }
+
   }
 
   &-info{
     .release-day{
       font-size: xx-small;
-
     }
     h5{
       margin-block-start: 0.3em;
       margin-block-end: 0.3em;
+      @media #{$media-size-phone} {
+        text-align: center;
+        display: block;
+      }
     }
     p{
      font-size: small;
    }
+  }
+
+  @media #{$media-size-phone} {
+    align-self: center;
   }
 
 }
