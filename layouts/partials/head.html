@@ -44,7 +44,7 @@
 <meta property="article:section" content="{{ . }}" />{{ end }}
 {{ if isset .Params "date" }}
 <meta property="article:published_time" content="{{ time .Date }}" />{{ end }}
-
+<meta name="google-site-verification" content="83X4eiMqN4k1rdNtstMPYQCN9PNUpKoSq5NWEW0hRQw" />
 <!-- RSS -->
 {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
