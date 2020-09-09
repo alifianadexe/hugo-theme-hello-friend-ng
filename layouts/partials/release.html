@@ -12,11 +12,11 @@
                         <div class="row release">
                                 {{ with .Params.cover }}
                                 <div class="col-md-6 col-sm-6 release-img">    
-                                    <img alt="{{ . }}" src="{{ . }}" class="post-cover" />
+                                    <img alt="{{ . }}" src="{{ . }}" class="post-cover" loading="lazy" />
                                 </div>
                                 {{ else }}
                                 <div class="col-md-6 col-sm-6 release-img">
-                                    <img alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png">
+                                    <img alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
                                 </div>    
                                 {{ end }}
                                 <div class="col-md-6 col-sm-6 release-info">
