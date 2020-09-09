@@ -136,6 +136,46 @@
     border-radius: 50%;
     margin: 0 5px;
   }
+
+  #toc_container{
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size:  100%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+    // text-align: left;
+
+    .dark-theme & {
+      background: $dark-background-secondary;
+    }
+
+    .toc_title{
+      font-weight: 700;
+      text-align: center;
+    }
+
+    // li, ul{
+    //   list-style: outside none none;
+    // }
+
+    li{
+      font-weight: 700;
+    }
+
+    li ul{
+      list-style-type: katakana !important;
+    }
+
+    li ul li{
+      font-weight: 500;
+      color : #007db5 !important;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+  }
+
 }
 
 .comments{

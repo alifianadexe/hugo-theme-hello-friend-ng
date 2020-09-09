@@ -17,18 +17,19 @@
         <article>
             <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
 
-            {{- if .Params.toc }}
-                <hr />
-                <aside id="toc">
-                <div class="toc-title">{{ i18n "tableOfContents" }}</div>
-                    {{ .TableOfContents }}
-                </aside>
-                <hr />
-            {{- end }}
+           
 
             {{ with .Params.Cover }}
                 <img alt="{{ . }}" src="{{ . }}" class="post-cover" />
             {{ end }}
+
+            {{- if .Params.toc }}
+            <div id="toc_container">
+                <div class="toc_title">{{ i18n "tableOfContents" }}</div>
+                {{ .TableOfContents }}
+            </div>
+            <br>
+            {{- end }}
 
             <div class="post-content">
                 {{ $reAltIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" }}
