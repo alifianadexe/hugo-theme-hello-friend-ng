@@ -48,3 +48,56 @@
   src: url("../fonts/Inter-UI-BoldItalic.woff2") format("woff2"),
        url("../fonts/Inter-UI-BoldItalic.woff") format("woff");
 }
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Muli';
+  font-style:  normal;
+  font-display: auto;
+  font-weight: 400;
+  src: url("../fonts/Muli.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Muli';
+  font-style:  italic;
+  font-display: auto;
+  font-weight: 400;
+  src: url("../fonts/Muli-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-display: auto;
+  font-weight: 600;
+  src: url("../fonts/Muli-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-display: auto;
+  font-weight: 600;
+  src: url("../fonts/Muli-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-display: auto;
+  font-weight: 800;
+  src: url("../fonts/Muli-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-display: auto;
+  font-weight: 800;
+  src: url("../fonts/Muli-BoldItalic.ttf") format("truetype");
+}

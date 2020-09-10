@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   line-height: 1.6;
-  letter-spacing: .06em;
+  letter-spacing: .06em; 
   scroll-behavior: smooth;
 }
 
@@ -15,10 +15,10 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 68px;
-  font-family: 'Inter UI', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",  Helvetica, Arial, sans-serif;
-  font-display: auto;
+  font-family:  "Muli", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
+  letter-spacing: -.004em;
   font-size: 1.1rem;
-  line-height: 1.54;
+  line-height: 1.58;
   background-color: $light-background;
   color: $light-color;
   text-rendering: optimizeLegibility;
@@ -32,7 +32,7 @@ body {
   flex-direction: column;
 
   @media #{$media-size-phone} {
-    font-size: 1rem;
+    font-size: 1.05rem;
     display: block;
   }
 
