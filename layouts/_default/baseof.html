@@ -17,11 +17,16 @@
             {{ end }}
         </div>
         <a id="but-to-up"></a>
-        <div id="search" > 
-            <button type="button" class="close">×</button>
-            <input id="searching" type="search" value="" placeholder="type keyword(s) here" ></inpu>
-            <ul id="results"></ul>
-        </div>        
+        <div id="search" >
+            <div class="loop" style="display: none;">
+                <img src="/img/for-gif-min.gif" style="width: 100px; height: 100px;" />
+            </div> 
+            <form id="search-form" class="search-form" role="search">            
+                <button type="button" class="close">×</button>
+                <input id="search-input" class="search-input" type="search" value="" placeholder="type keyword(s) here" ></input>
+            </form>
+            {{ partial "search.html" . }}
+        </div>     
         {{ partial "javascript.html" . }}
     </body>
 </html>

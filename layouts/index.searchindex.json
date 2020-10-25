@@ -5,6 +5,11 @@
       {{- $entry = merge $entry (dict "content" ($page.Plain | htmlUnescape)) -}}
       {{- $entry = merge $entry (dict "description" $page.Description) -}}
       {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}}
+      {{- with $page.Params.cover -}}
+        {{- $entry = merge $entry (dict "cover" $page.Params.cover) -}}
+      {{- else -}}
+        {{- $entry = merge $entry (dict "cover" "/img/no-image-small.jpg") -}}
+      {{- end -}}
       {{- $entry | jsonify -}}
     {{- end -}}
 ]

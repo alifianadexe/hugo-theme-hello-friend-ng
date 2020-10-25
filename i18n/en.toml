@@ -18,6 +18,9 @@ other = "Archives"
 [home]
 other = "Home"
 
+[readMore]
+other = "Read More"
+
 [notFound]
 other = "Oops, page not found…"
 
