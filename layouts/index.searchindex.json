@@ -1,7 +1,8 @@
 [
     {{- range $index, $page := .Site.RegularPages -}}
       {{- if gt $index 0 -}} , {{- end -}}
-      {{- $entry := dict "uri" $page.RelPermalink "title" $page.Title -}}
+      {{- $entry := dict "url" $page.RelPermalink -}}
+      {{- $entry = merge $entry (dict "title" $page.Title) -}}
       {{- $entry = merge $entry (dict "content" ($page.Plain | htmlUnescape)) -}}
       {{- $entry = merge $entry (dict "description" $page.Description) -}}
       {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}}
