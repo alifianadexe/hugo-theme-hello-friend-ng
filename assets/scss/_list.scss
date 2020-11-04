@@ -256,7 +256,7 @@
       margin-bottom: 1em;
     }
 
-      width: 10em;
+      width: 20em;
       height: 10em;
       object-fit: cover;
       border-radius: 10px;
@@ -287,50 +287,54 @@
     align-self: center;
   }
 
-  .result-search{
+}
+
+.result-search {
   
-    @media #{$media-size-phone} {
-      text-align: center;
-    }
-  
-    &-img{
-          
-      img{
+  @media #{$media-size-phone} {
+    text-align: center;
+  }
+
+  &-img{
         
-      @media #{$media-size-phone} {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1em;
-      }
-  
-        width: 15em;
-        height: 15em;
-        object-fit: cover;
-        border-radius: 10px;
-        margin: 0;
-        max-width: 100%;
-      }
-  
-    }
-  
-    &-info{
-      h5{
-        margin-block-start: 0.3em;
-        margin-block-end: 0.3em;
-        @media #{$media-size-phone} {
-          text-align: center;
-          display: block;
-        }
-      }
+    img{
+      
+    @media #{$media-size-phone} {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1em;
     }
 
-    &-summary{
-      font-size: small; 
+      width: 15em;
+      height: 15em;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 0;
+      max-width: 100%;
     }
-  
-    @media #{$media-size-phone} {
-      align-self: center;
+
+  }
+
+  &-info{
+    h5{
+      margin-block-start: 0.3em;
+      margin-block-end: 0.3em;
+      @media #{$media-size-phone} {
+        text-align: center;
+        display: block;
+      }
     }
   }
 
+  &-summary{
+    font-size: small; 
+  }
+
+  @media #{$media-size-phone} {
+    align-self: center;
+  }
+}
+
+.tag-list {
+  margin-top: 1.4em;
 }

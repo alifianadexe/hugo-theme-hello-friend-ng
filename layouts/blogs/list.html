@@ -1,28 +1,45 @@
 {{ define "main" }}
-    <main class="posts">
-        
+    <div class="container">
+        <div class="row">
         {{- if .Content }}
             <div class="content">{{ .Content }}</div>
         {{- end }}
 
         <div class="posts-menu" style="margin-top: 3em;">
-            <p class="subtitle fancy"><span><i>"isi dan opini"</i></span></p>
+            <p class="subtitle fancy"><span><i>"fakta dan opini"</i></span></p>
         </div>
-        {{- range .Data.Pages.GroupBy "Section" }}
-            <div class="posts-group">
-                <div class="post-year">{{ .Key }}</div>
-
-                <ul class="posts-list">
-                    {{- range where .Pages "Params.status" "==" "publish" }}
-                        <li class="post-item">
-                            <a href="{{.Permalink}}">
-                                <span class="post-title">{{.Title}}</span>
-                                <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
-                            </a>
-                        </li>
-                    {{- end }}
-                </ul>
+        {{ $paginator := .Paginate (where .Pages "Params.status" "publish") 8 }}
+        {{ range $paginator.Pages  }}
+            <div style="max-height: 300px;" class="col-lg-6 col-md-6 col-sm-12">
+                <article class="content post">
+                    <div class="row clearfix  release">
+                        <a class="link" href="{{.Permalink}}">        
+                            <div class="col-md-5 col-sm-5 release-img text-center">    
+                                {{ with .Params.cover }}
+                                    <img class="blurry-load post-cover" src="/img/no-image-small.jpg" data-large="{{ . }}" alt="cover" loading="lazy"/> 
+                                {{ else }}
+                                    <img  class="blurry-load post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image-small.jpg" loading="lazy">
+                                {{ end }}
+                            </div>
+                            <div class="col-md-7 col-sm-7 result-search-info">
+                                <h4 class="release-title">{{.Title}}</h4>
+                                <summary class="result-search-summary summary">{{ .Description }}</summary>
+                                <br>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tag-list">
+                        {{ with .Params.tags }}
+                            {{ range . }}
+                                <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}"> <code>{{ . }}</code> </a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                    <hr>
+                </article>
             </div>
         {{ end }}
-    </main>
+        </div>
+        {{ partial "pagination.html" . }}
+    </div>
 {{ end }}
