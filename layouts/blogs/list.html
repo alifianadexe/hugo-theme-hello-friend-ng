@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-md-7 col-sm-7 result-search-info">
                                 <h4 class="release-title">{{.Title}}</h4>
-                                <summary class="result-search-summary summary">{{ .Description }}</summary>
+                                <summary class="result-search-summary summary">{{ (.Plain | safeHTML | truncate 150) }}</summary>
                                 <br>
                             </div>
                         </a>
