@@ -123,6 +123,11 @@
     }
   }
 
+  &-share{
+   margin-top: 5em;
+   text-align: center;
+  }
+
   @media #{$media-size-tablet} {
     max-width: 600px;
     margin-left:0;
