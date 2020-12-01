@@ -222,10 +222,14 @@ ul,
 ol {
   margin-left: 40px;
   padding: 0;
-
+  
   @media #{$media-size-phone} {
     margin-left: 20px;
   }
+}
+
+ol li::marker{
+  font-weight: bold;
 }
 
 ol ol {
