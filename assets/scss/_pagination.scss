@@ -1,0 +1,22 @@
+.pagination{
+    li{
+        font-size: 20px;
+        display:inline;
+        a{
+            padding-left: 14px;
+            padding-right: 10px;
+            padding-top: 2px;
+        }
+    }
+    .active{
+        background-color:  #2e2e2e !important;
+        border-radius: 3px;
+        padding-bottom: 4px;
+        color: #fff !important;
+        
+        &.dark-theme {
+            background-color:#fff ;
+            color: #2e2e2e !important;
+        }
+    }
+}
