@@ -347,3 +347,49 @@
 
 }
 
+
+
+/* Ads Section */
+
+.ads-below{
+  text-align: center;
+  font-size: 16px;
+}
+
+.ads-side-1 {
+  width: 15%;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 50px;
+  right: 10px;
+
+  @media #{$media-size-tablet} {
+    display: relative;
+    position: relative;
+    width: 100%;
+  }
+
+  @media #{$media-size-phone} {
+    padding:0;
+  }
+}
+
+.ads-side-2 {
+  width: 17%;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 50px;
+  left: 10px;
+  
+  @media #{$media-size-tablet} {
+    display: relative;
+    position: relative;
+    width: 100%;
+  }
+
+  @media #{$media-size-phone} {
+    padding:0;
+  }
+}
