@@ -382,14 +382,10 @@
   z-index: 1;
   top: 50px;
   left: 10px;
-  
-  @media #{$media-size-tablet} {
+
+  @media #{$media-size-ads} {
     display: relative;
     position: relative;
     width: 100%;
-  }
-
-  @media #{$media-size-phone} {
-    padding:0;
   }
 }
