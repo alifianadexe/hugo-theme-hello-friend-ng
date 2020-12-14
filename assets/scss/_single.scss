@@ -347,7 +347,34 @@
 
 }
 
+.related-side{
+  width: 15%;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  top: 20%;
+  right: 10px;
 
+  ul{
+    margin: 0;
+    li{
+      margin-bottom: 1em;
+      list-style-type: hiragana;
+      font-size: 0.9em;
+
+    }
+  }
+
+  @media #{$media-size-tablet} {
+    display: relative;
+    position: relative;
+    width: 100%;
+  }
+
+  @media #{$media-size-phone} {
+    padding:0;
+  } 
+}
 
 /* Ads Section */
 
