@@ -384,13 +384,13 @@
 }
 
 .ads-side-1 {
-  width: 15%;
+  width: 13%;
   position: fixed;
   height: 100%;
   z-index: 1;
-  top: 50px;
-  right: 10px;
-
+  top: 40px;
+  right: 4px;
+  background-color: #000;
   @media #{$media-size-tablet} {
     display: relative;
     position: relative;
@@ -403,12 +403,12 @@
 }
 
 .ads-side-2 {
-  width: 17%;
+  width: 16%;
   position: fixed;
   height: 100%;
   z-index: 1;
-  top: 50px;
-  left: 10px;
+  top: 40px;
+  left: 7px;
 
   @media #{$media-size-ads} {
     display: relative;
