@@ -18,7 +18,7 @@
             <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
 
             {{ with .Params.Cover }}
-                <img class="blurry-load post-cover" src="/img/no-image.png" data-large="{{ . }}" alt="{{ . }}" loading="lazy" />
+                <img class="blurry-load post-cover" src="/img/no-image.png" data-large="{{ . }}" alt="{{ . }}" loading="lazy" data-zoomable />
             {{ end }}
 
             {{- if .Params.toc }}

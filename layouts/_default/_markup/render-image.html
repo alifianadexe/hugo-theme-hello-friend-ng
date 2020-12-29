@@ -1,6 +1,6 @@
 {{ if .Title }}
   <figure>
-    <img class="blurry-load" src="/img/no-image-small.jpg" data-large="{{ .Destination | safeURL }}" alt="{{ .Text }}" title="{{ .Title }}" loading="lazy">
+    <img class="blurry-load" src="/img/no-image-small.jpg" data-large="{{ .Destination | safeURL }}" alt="{{ .Text }}" title="{{ .Title }}" loading="lazy" data-zoomable>
     <figcaption>{{ .Title }}</figcaption>
   </figure>
 {{ else }}
