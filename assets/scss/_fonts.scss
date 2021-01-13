@@ -1,121 +1,19 @@
 @font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-display: auto;
-  font-weight: 400;
-  src: url("../fonts/Inter-UI-Regular.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Regular.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-display: auto;
-  font-weight: 400;
-  src: url("../fonts/Inter-UI-Italic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-display: auto;
-  font-weight: 600;
-  src: url("../fonts/Inter-UI-Medium.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Medium.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-display: auto;
-  font-weight: 600;
-  src: url("../fonts/Inter-UI-MediumItalic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-MediumItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-display: auto;
-  font-weight: 800;
-  src: url("../fonts/Inter-UI-Bold.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-display: auto;
-  font-weight: 800;
-  src: url("../fonts/Inter-UI-BoldItalic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-BoldItalic.woff") format("woff");
-}
-
-
-
-
-
-
-
-@font-face {
-  font-family: 'Muli';
-  font-style:  normal;
-  font-display: auto;
-  font-weight: 400;
-  src: url("../fonts/Muli.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Muli';
-  font-style:  italic;
-  font-display: auto;
-  font-weight: 400;
-  src: url("../fonts/Muli-Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-display: auto;
-  font-weight: 600;
-  src: url("../fonts/Muli-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-display: auto;
-  font-weight: 600;
-  src: url("../fonts/Muli-SemiBoldItalic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-display: auto;
-  font-weight: 800;
-  src: url("../fonts/Muli-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-display: auto;
-  font-weight: 800;
-  src: url("../fonts/Muli-BoldItalic.ttf") format("truetype");
-}
-
-
-@font-face {
   font-family: 'Asap';
   font-style:  normal;
   font-display: auto;
   font-weight: 400;
   src: url("../fonts/Asap.ttf") format("truetype");
+  font-display: swap;
 }
+
 @font-face {
   font-family: 'Asap';
   font-style:  italic;
   font-display: auto;
   font-weight: 400;
   src: url("../fonts/Asap-Italic.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -124,6 +22,7 @@
   font-display: auto;
   font-weight: 600;
   src: url("../fonts/Asap-SemiBold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -132,6 +31,7 @@
   font-display: auto;
   font-weight: 600;
   src: url("../fonts/Asap-SemiBoldItalic.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -140,6 +40,7 @@
   font-display: auto;
   font-weight: 800;
   src: url("../fonts/Asap-SemiBold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -148,4 +49,5 @@
   font-display: auto;
   font-weight: 800;
   src: url("../fonts/Asap-SemiBoldItalic.ttf") format("truetype");
+  font-display: swap;
 }
