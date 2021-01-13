@@ -6,20 +6,6 @@
 	By Osvaldas Valutis, www.osvaldas.info
 	Available for use under the MIT License
 */
-let options = {
-    scriptUrl: '//anbidev.disqus.com/embed.js',
-    laziness: 1,
-    throttle: 250,
-    disqusConfig: function () {
-        this.page.title = 'AnbiDev';
-        this.page.url = 'https://anbidev.com';
-        this.callbacks.onReady = [function () {
-            $('.disqus-placeholder').addClass('is-hidden');
-        }];
-    }
-};
-$.disqusLoader('.disqus', options);
-
 (function ($, window, document, undefined) {
     'use strict';
 
@@ -103,3 +89,17 @@ $.disqusLoader('.disqus', options);
     };
 
 })(jQuery, window, document);
+
+let options = {
+    scriptUrl: '//anbidev.disqus.com/embed.js',
+    laziness: 1,
+    throttle: 250,
+    disqusConfig: function () {
+        this.page.title = 'AnbiDev';
+        this.page.url = 'https://anbidev.com';
+        this.callbacks.onReady = [function () {
+            $('.disqus-placeholder').addClass('is-hidden');
+        }];
+    }
+};
+$.disqusLoader('.disqus', options);
