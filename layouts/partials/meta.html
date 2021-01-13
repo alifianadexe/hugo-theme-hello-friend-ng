@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="{{ if .Params.author.name }}{{ .Params.author.name }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}">
+<meta name="description"
+    content="{{ if .IsHome }}{{ .Site.Params.homeSubtitle }}{{ else }}{{ .Params.description }}{{ end }}" />
+<meta name="keywords" content="{{ .Site.Params.keywords }}" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta property="og:locale" content="id-ID" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Params.title }}" />
+<meta property="og:description" content="{{ .Params.description }}" />
+<meta itemprop=image content="">
+<meta property="og:image" itemprop="image" content="">
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="article:publisher" content="" />
+<meta property="article:modified_time" content="{{ .Params.date }}" />
+<meta name="twitter:card" content="{{ .Params.description }}" />
+<meta name="twitter:creator" content="{{ .Params.author.name }}" />
+<meta name="twitter:site" content="@anbidev" />

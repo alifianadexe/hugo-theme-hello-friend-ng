@@ -1,26 +1,5 @@
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="{{ if .Params.author.name }}{{ .Params.author.name }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}">
-<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.homeSubtitle }}{{ else }}{{ .Params.description }}{{ end }}" />
-<meta name="keywords" content="{{ .Site.Params.keywords }}" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-<link rel="canonical" href="{{ .Permalink }}" />
-<meta property="og:locale" content="id-ID" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="{{ .Params.title }}" />
-<meta property="og:description" content="{{ .Params.description }}" />
-<meta itemprop=image content="https://anbidev.com/post/clean-code-thumb.jpg">
-<meta property="og:image" itemprop="image" content="https://anbidev.com/post/clean-code-thumb.jpg">
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="article:publisher" content="https://facebook.com/anbidevofficial" />
-<meta property="article:modified_time" content="{{ .Params.date }}" />
-<meta name="twitter:card" content="{{ .Params.description }}" />
-<meta name="twitter:creator" content="{{ .Params.author.name }}" />
-<meta name="twitter:site" content="@anbidev" />
+{{- partial "meta.html" }}
+
 <link rel="canonical" href="{{ .Permalink }}" />
 
 {{ block "title" . }}
@@ -35,12 +14,19 @@
 
 <!-- CSS -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+
 <!-- Icon -->
-<link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">   
+<!-- <link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    -->
 
 {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- define preload font -->
+<link rel="preload" href="/fonts/Asap.ttf" as="font" crossorigin>
+<link rel="preload" href="/fonts/Asap-Italic.ttf" as="font" crossorigin>
+<link rel="preload" href="/fonts/Asap-SemiBold.ttf" as="font" crossorigin>
+<link rel="preload" href="/fonts/Asap-SemiBoldItalic.ttf" as="font" crossorigin>
 
 {{ range $val := $.Site.Params.customCSS }}
 {{ if gt (len $val) 0 }}
