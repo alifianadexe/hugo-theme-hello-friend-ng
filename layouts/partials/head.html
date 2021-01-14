@@ -18,15 +18,17 @@
 <!-- Icon -->
 <!-- <link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    -->
 
+
+<!-- define preload font -->
+<link rel="preload" href="/fonts/asap-v13-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/asap-v13-latin-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/asap-v13-latin-600regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/asap-v13-latin-600italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
 {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-<!-- define preload font -->
-<!-- <link rel="preload" href="/fonts/Asap.ttf" as="font" crossorigin>
-<link rel="preload" href="/fonts/Asap-Italic.ttf" as="font" crossorigin>
-<link rel="preload" href="/fonts/Asap-SemiBold.ttf" as="font" crossorigin>
-<link rel="preload" href="/fonts/Asap-SemiBoldItalic.ttf" as="font" crossorigin> -->
 
 {{ range $val := $.Site.Params.customCSS }}
 {{ if gt (len $val) 0 }}
