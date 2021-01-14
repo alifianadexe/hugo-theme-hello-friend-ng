@@ -18,15 +18,15 @@
 <!-- Icon -->
 <!-- <link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    -->
 
+<link rel="preload" href="/fonts/asap-v13-latin-regular.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/fonts/asap-v13-latin-italic.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/fonts/asap-v13-latin-600.woff2" as="font" type="font/woff2" />
+<link rel="preload" href="/fonts/asap-v13-latin-600italic.woff2" as="font" type="font/woff2" />
 
 <!-- define preload font -->
 {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-<link rel="preload" href="/fonts/asap-v13-latin-regular.woff2" as="font" type="font/woff2" />
-<link rel="preload" href="/fonts/asap-v13-latin-italic.woff2" as="font" type="font/woff2" />
-<link rel="preload" href="/fonts/asap-v13-latin-600regular.woff2" as="font" type="font/woff2" />
-<link rel="preload" href="/fonts/asap-v13-latin-600italic.woff2" as="font" type="font/woff2" />
 
 
 
