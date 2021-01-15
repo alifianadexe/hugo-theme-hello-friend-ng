@@ -9,7 +9,10 @@
       {{- with $page.Params.cover -}}
         {{- $entry = merge $entry (dict "cover" $page.Params.cover) -}}
       {{- else -}}
-        {{- $entry = merge $entry (dict "cover" "/img/no-image-small.jpg") -}}
+        {
+          {- $entry = merge $entry (dict "cover" "/img/no-image.png") -
+          }
+        }
       {{- end -}}
       {{- $entry | jsonify -}}
     {{- end -}}

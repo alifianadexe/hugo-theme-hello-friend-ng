@@ -1,10 +1,10 @@
 // Some code could be here ...
 /*
-	disqusLoader.js v1.0
-	A JavaScript plugin for lazy-loading Disqus comments widget.
-	-
-	By Osvaldas Valutis, www.osvaldas.info
-	Available for use under the MIT License
+    disqusLoader.js v1.0
+    A JavaScript plugin for lazy-loading Disqus comments widget.
+    -
+    By Osvaldas Valutis, www.osvaldas.info
+    Available for use under the MIT License
 */
 (function ($, window, document, undefined) {
     'use strict';

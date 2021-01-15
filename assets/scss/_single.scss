@@ -384,36 +384,22 @@
   text-align: center;
   font-size: 16px;
 }
-
-.ads-side-1 {
-  width: 13%;
-  position: fixed;
-  height: 100%;
-  z-index: 1;
-  top: 40px;
-  right: 4px;
-  @media #{$media-size-tablet} {
-    display: relative;
-    position: relative;
-    width: 100%;
-  }
-
-  @media #{$media-size-phone} {
-    padding:0;
-  }
+.adsense {
+  position: relative;
 }
-
-.ads-side-2 {
-  width: 16%;
-  position: fixed;
+.adsense__loading {
+  width: 100%;
   height: 100%;
-  z-index: 1;
-  top: 40px;
-  left: 7px;
-
-  @media #{$media-size-ads} {
-    display: relative;
-    position: relative;
-    width: 100%;
-  }
+  background-color: rgba( 255, 255, 255, .9 );
+  display: table; /* for vertical centering */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.adsense--loaded .adsense__loading { display: none; }
+.adsense__loading span {
+    text-align: center;
+    color:#000;
+    vertical-align: middle; /* for vertical centering */
+    display: table-cell; /* for vertical centering */
 }
