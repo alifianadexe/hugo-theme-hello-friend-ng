@@ -23,7 +23,7 @@
             {{- end }}
 
             {{ with .Params.Cover }}
-                <img alt="{{ . }}" src="/post/{{ . }}" class="post-cover" />
+                <img alt="{{ . }}" src="/img/no-image.png" data-src="/post/{{ . }}" class="post-cover lazy" />
             {{ end }}
 
             <div class="post-content">

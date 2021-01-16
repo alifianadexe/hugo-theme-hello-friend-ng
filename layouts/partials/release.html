@@ -12,11 +12,11 @@
                         <div class="row release">
                                 {{ with .Params.cover }}
                                 <div class="col-md-6 col-sm-6 release-img">    
-                                    <img  class="blurry-load post-cover"  src="/img/no-image.png" alt="{{ . }}" data-large="{{ . }}"  loading="lazy" />
+                                    <img  class="lazy post-cover"  alt="{{ . }}" src="/img/no-image.png" data-src="{{ . }}"  loading="lazy" />
                                 </div>
                                 {{ else }}
                                 <div class="col-md-6 col-sm-6 release-img">
-                                    <img  class="blurry-load post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
+                                    <img  class="lazy post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
                                 </div>    
                                 {{ end }}
                                 <div class="col-md-6 col-sm-6 release-info">
@@ -38,11 +38,11 @@
                     <div class="row release">
                             {{ with .Params.cover }}
                             <div class="col-md-6 col-sm-6 release-img">    
-                                <img  class="blurry-load post-cover"  src="/img/no-image.png" alt="{{ . }}" data-large="{{ . }}" loading="lazy" />
+                                <img  class="lazy post-cover"  alt="{{ . }}" src="/img/no-image.png" data-src="{{ . }}" loading="lazy" />
                             </div>
                             {{ else }}
                             <div class="col-md-6 col-sm-6 release-img">
-                                <img  class="blurry-load post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
+                                <img  class="lazy post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
                             </div>    
                             {{ end }}
                             <div class="col-md-6 col-sm-6 release-info">

@@ -2,7 +2,7 @@
     <main class="posts">
         <div class="author-div">
             <div class="author-img">
-                <img alt="{{ .Params.name }}" src="/img/{{ .Params.photo }}">
+                <img alt="{{ .Params.name }}" class="lazy" src="/img/no-image.png" data-src="/img/{{ .Params.photo }}">
             </div>
             <h2>{{ .Params.name }}</h2>
             <p>{{ .Content }}</p>

@@ -1,6 +1,6 @@
 {{ if .Title }}
   <figure>
-    <img src="/img/no-image.png" data-large="{{ .Destination | safeURL }}" alt="{{ .Text }}" title="{{ .Title }}" loading="lazy">
+    <img class="lazy" src="/img/no-image.png" data-src="{{ .Destination | safeURL }}" alt="{{ .Text }}" title="{{ .Title }}" >
     <figcaption>{{ .Title }}</figcaption>
   </figure>
 {{ else }}
