@@ -5,11 +5,22 @@
     Available for use under the MIT License
 */
 
-; (function ($, window, document, undefined) {
+;
+(function ($, window, document, undefined) {
     'use strict';
 
     var $win = $(window),
-        throttle = function (a, b) { var c, d; return function () { var e = this, f = arguments, g = +new Date; c && g < c + a ? (clearTimeout(d), d = setTimeout(function () { c = g, b.apply(e, f) }, a)) : (c = g, b.apply(e, f)) } },
+        throttle = function (a, b) {
+            var c, d;
+            return function () {
+                var e = this,
+                    f = arguments,
+                    g = +new Date;
+                c && g < c + a ? (clearTimeout(d), d = setTimeout(function () {
+                    c = g, b.apply(e, f)
+                }, a)) : (c = g, b.apply(e, f))
+            }
+        },
 
         scriptUrl = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         scriptLoaded = false,
@@ -62,19 +73,18 @@
 
                 if (!scriptLoaded) {
                     scriptLoaded = true;
-                    $.ajax(
-                        {
-                            url: scriptUrl,
-                            async: true,
-                            cache: true,
-                            dataType: 'script',
-                            success: function () {
-                                $adsPending.each(function () {
-                                    loadAd($(this));
-                                });
-                                $adsPending = $([]);
-                            }
-                        });
+                    $.ajax({
+                        url: scriptUrl,
+                        async: true,
+                        cache: true,
+                        dataType: 'script',
+                        success: function () {
+                            $adsPending.each(function () {
+                                loadAd($(this));
+                            });
+                            $adsPending = $([]);
+                        }
+                    });
                 }
             });
         },
@@ -100,8 +110,7 @@
 
     $.fn.adsenseLoader = function (options) {
         if (typeof options !== 'string') {
-            options = $.extend({},
-                {
+            options = $.extend({}, {
                     laziness: 1,
                     onLoad: false
                 },
@@ -116,8 +125,7 @@
                 $adsToLoad = $adsToLoad.not($this);
                 $adsLoaded = $adsLoaded.not($this);
                 $adsPending = $adsPending.not($this);
-            }
-            else {
+            } else {
                 $this.data('alOptions', options);
                 $adsToLoad = $adsToLoad.add($this);
             }
@@ -148,4 +156,4 @@ options = {
 };
 
 // jQuery
-// $('.adsense').adsenseLoader(options);
+$('.adsense').adsenseLoader(options);
