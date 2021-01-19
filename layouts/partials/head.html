@@ -1,25 +1,28 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<meta itemprop="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta itemprop="author" content="{{ if .Params.author.name }}{{ .Params.author.name }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}">
-<meta itemprop="description" content="{{ if .IsHome }}{{ .Site.Params.homeSubtitle }}{{ else }}{{ .Params.description }}{{ end }}" />
-<meta itemprop="keywords" content="{{ .Params.tags }}" />
-<meta itemprop="image" content="">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="{{ if .Params.author.name }}{{ .Params.author.name }}{{ else }}{{ range .Site.Author }}{{ . }} {{ end }}{{ end }}">
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.description }}{{ end }}" />
+<meta name="keywords" content="{{ .Site.Params.keywords }}" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta itemprop="image" content="https://www.anbidev.com{{ if .IsHome }}{{ .Site.Params.image }}{{ else }}{{ .Params.cover }}{{ end }}">
 
 <meta property="og:locale" content="id-ID" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ .Params.title }}" />
 <meta property="og:description" content="{{ .Params.description }}" />
-<meta property="og:image" itemprop="image" content="">
+<meta property="og:image" itemprop="image" content="https://www.anbidev.com{{ .Params.cover }}">
+<meta property="og:image:secure_url" itemprop="image" content="https://www.anbidev.com{{ .Params.cover }}">
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
 <meta property="article:publisher" content="" />
 <meta property="article:modified_time" content="{{ .Params.date }}" />
-<meta property="article:author" content="https://www.facebook.com/anbidevofficial">
 
+<meta name="twitter:image" content="{{ .Params.cover }}" />
 <meta name="twitter:card" content="{{ .Params.description }}" />
 <meta name="twitter:creator" content="{{ .Params.author.name }}" />
 <meta name="twitter:site" content="@anbidev" />
@@ -46,6 +49,7 @@
 <link rel="icon" type="image/png" href="/appicons/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="/appicons/favicon-16x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="/appicons/favicon-128.png" sizes="128x128" />
+
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <meta name="msapplication-TileImage" content="/appicons/mstile-144x144.png" />
 <meta name="msapplication-square70x70logo" content="/appicons/mstile-70x70.png" />
