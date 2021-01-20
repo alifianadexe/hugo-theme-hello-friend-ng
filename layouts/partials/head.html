@@ -103,7 +103,6 @@
 {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-
 {{ range $val := $.Site.Params.customCSS }}
 {{ if gt (len $val) 0 }}
 <link rel="stylesheet" type="text/css" href="/{{ $val }}">
@@ -112,7 +111,6 @@
 
 <!-- Icons -->
 {{- partial "favicons.html" }}
-
 
 <!-- RSS -->
 {{ with .OutputFormats.Get "rss" -}}
@@ -124,5 +122,3 @@
 <link href="{{ if .OutputFormats.Get "json" }}{{ .Site.BaseURL }}feed.json{{ end }}" rel="alternate"
     type="application/json" title="{{ .Site.Title }}" />
 {{ end }}
-
-<!-- Custom head tags -->
