@@ -90,13 +90,14 @@
 
 })(jQuery, window, document);
 
+
 let options = {
     scriptUrl: '//anbidev.disqus.com/embed.js',
     laziness: 1,
     throttle: 250,
     disqusConfig: function () {
         this.page.title = 'AnbiDev';
-        this.page.url = 'https://anbidev.com';
+        this.page.url = window.location.href;
         this.callbacks.onReady = [function () {
             $('.disqus-placeholder').addClass('is-hidden');
         }];
