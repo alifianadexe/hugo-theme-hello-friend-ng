@@ -151,7 +151,7 @@
 options = {
     laziness: 1,
     onLoad: function ($ad) {
-        $ad.addClass('adsense--loaded')
+        $ad.addClass('adsense__loaded')
     }
 };
 

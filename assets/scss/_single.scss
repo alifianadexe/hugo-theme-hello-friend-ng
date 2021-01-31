@@ -388,15 +388,12 @@
   position: relative;
 }
 .adsense__loading {
-  width: 100%;
-  height: 100%;
-  background-color: rgba( 255, 255, 255, .9 );
   display: table; /* for vertical centering */
   position: absolute;
   top: 0;
   left: 0;
 }
-.adsense--loaded .adsense__loading { display: none; }
+.adsense__loaded .adsense__loading { display: none; }
 .adsense__loading span {
     text-align: center;
     color:#000;
