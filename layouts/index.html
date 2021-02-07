@@ -1,16 +1,17 @@
 {{ define "main" }}
+<div class="content">
     <main aria-roledescription="main">
-        <div>
+        <div class="container">
             <div class="text-center">
-                <img alt="Atas Nama Bangsa Indonesia" class="img-logo img-fluid" src="/img/logo.svg">
+                {{ partial "icon-anbi.html" . }}
             </div>
             
             <h1 class="title">{{ .Site.Title }}</h1>
             {{- with .Site.Params.homeSubtitle }}
-                <p>{{.}}</p>
+                <p class="subtitle">{{.}}</p>
             {{- end }}
             {{- with .Site.Params.homeQuotes }}
-                <p class="border-left"><i>{{.}}</i></p>
+                <p class="subtitle"><i>{{.}}</i></p>
             {{- end }}
             
             {{- with .Site.Params.social }}
@@ -25,13 +26,25 @@
                         <div class="circle">
                         <span class="icon arrow"></span>
                         </div>
-                        <p class="button-text">Learn Here</p>
+                        <p class="button-text">Belajar Sini!</p>
                     </button>
                 </a>
             </div>  
         </div>
-        {{ partial "release.html" . }}
     </main>
+    <div class="posts-menu" style="margin-top: 3em;">
+        <p class="subtitle fancy"><span><i>"Rilisan Terbaru"</i></span></p>
+    </div>
+    <div class="extended-index">
+        {{ partial "release.html" . }}
+    </div>
+    <div class="posts-menu" style="margin-top: 3em;">
+        <p class="subtitle fancy"><span><i>"Atau Lainnya?"</i></span></p>
+    </div>
+    <div class="extended-index">
+        {{ partial "category-post.html" . }}
+    </div>
+</div>
 {{ end }}
 
 

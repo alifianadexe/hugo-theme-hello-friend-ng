@@ -97,8 +97,8 @@
     }
 
     .subtitle {
-      font-size: 20px;
-      margin: 0 0 2em 0;
+      font-size: 24px;
+      margin: 0 0 1em 0;
     }
 
     .fancy {
@@ -170,8 +170,111 @@
   }
 }
 
+.posts-tutorials {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  padding: 20px;
+  margin: 20px;
+  
+  @media #{$media-size-tablet} {
+    max-width: 660px;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $light-border-color;
+
+    .dark-theme & {
+      border-color: $dark-border-color;
+    }
+  }
+
+  &-group {
+    display: flex;
+    margin-bottom: 1.9em;
+    line-height: normal;
+
+    @media #{$media-size-tablet} {
+      display: block;
+    }
+  }
+
+  &-list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-menu{
+   
+    ul{
+      list-style-type: none;
+      column-count: 3;
+
+      @media #{$media-size-phone} {
+        column-count: 2;
+      }
+    }
+
+    li{
+      font-size: 20px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin: 0 0 1em 0;
+    }
+    
+  }
+
+  .post {
+    &-title {
+      font-size: 1rem;
+      margin: 5px 0 5px 0;
+    }
+
+    &-year {
+      padding-top: 6px;
+      margin-right: 1.8em;
+      font-size: 1.6em;
+      @include dimmed;
+
+      @media #{$media-size-tablet} {
+        margin: -6px 0 4px;
+      }
+    }
+
+    &-item {
+      border-bottom: 1px grey dashed;
+
+      a {
+        display: flex;
+        justify-content: unset;
+        align-items: stretch;
+        padding: 12px 0;
+        text-decoration: none;
+      }
+
+      .img-thumb{
+        width: 4em;
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+
+    &-day {
+      flex-shrink: 0;
+      margin-left: 1em;
+      align-self: right;
+      @include dimmed;
+    }
+  }
+}
+
 .release{
   
+  margin-bottom: 1em;
   @media #{$media-size-phone} {
     text-align: center;
   }
@@ -180,11 +283,11 @@
         
     img{
       
-    @media #{$media-size-phone} {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 1em;
-    }
+      @media #{$media-size-phone} {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+      }
 
       width: 20em;
       height: 10em;
@@ -257,6 +360,7 @@
   }
 
   &-summary{
+    list-style-type: none;
     font-size: small; 
   }
 
@@ -268,3 +372,14 @@
 .tag-list {
   margin-top: 1.4em;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  @media #{$media-size-phone} {
+    grid-template-columns: none;
+  }
+}
+

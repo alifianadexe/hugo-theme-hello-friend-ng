@@ -1,10 +1,11 @@
 {{ define "main" }}
-    <main class="posts">
-        <h1>{{ .Title }}</h1>
-        
+    <div class="container">
+    <h1>{{ .Title }}</h1>    
         {{- if .Content }}
-            <div class="content">{{ .Content }}</div>
+                <div class="content">{{ .Description }}</div>
         {{- end }}
+    </div>
+    <main class="posts">
         
         {{ $scratch := newScratch }}
         {{ $scratch.Set "series" "xxx" }}

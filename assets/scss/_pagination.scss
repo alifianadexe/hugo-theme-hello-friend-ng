@@ -1,22 +1,68 @@
 .pagination{
-    li{
-        font-size: 20px;
-        display:inline;
-        a{
-            padding-left: 14px;
-            padding-right: 10px;
-            padding-top: 2px;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .5rem;
+    
+    .page-link{
+        padding: .75rem 1.5rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #007db5;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        position: relative;
+        display: block;
+
+        .dark-theme & {
+            background-color: $dark-header-background;
+            color: #fff; 
+        }
+
+        @media #{$media-size-tablet} {
+            padding: .2rem .8rem;
+            font-size: .7rem;
+            line-height: 1.5;
         }
     }
-    .active{
-        background-color:  #2e2e2e !important;
-        border-radius: 3px;
-        padding-bottom: 4px;
-        color: #fff !important;
-        
-        &.dark-theme {
-            background-color:#fff ;
-            color: #2e2e2e !important;
-        }
+
+    .page-item:first-child .page-link {
+        border-top-left-radius: .4rem;
+        border-bottom-left-radius: .4rem
+    }
+
+    .page-item:last-child .page-link {
+        border-top-right-radius: .4rem;
+        border-bottom-right-radius: .4rem
+    }
+
+    &.dark-theme {
+        background-color:#fff ;
+        color: #2e2e2e !important;
+    }
+
+    .page-item.active .page-link {
+        z-index: 3;
+        color: #ffffff;
+        background-color: $dark-border-color;
+        border-color: $dark-color;
+    }
+
+    .page-link:hover {
+        z-index: 2;
+        color: #0174aa;
+        text-decoration: none;
+        background-color: #e9ecef;
+        border-color: #dee2e6
+    }
+
+    .page-link:focus {
+        z-index: 3;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(32, 201, 151, .25)
+    }
+
+    @media #{$media-size-tablet} {
+        margin: 0;
     }
 }

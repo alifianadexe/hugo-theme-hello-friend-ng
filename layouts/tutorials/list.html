@@ -1,26 +1,61 @@
 {{ define "main" }}
-<main class="posts">
-        <div class="row">
-            {{ $sections := (.Site.GetPage "section" .Section).Sections }}
-            {{ range $sections }}
-                {{ $hasil := sub (len .File.Dir) 11 }}
-                {{ $word := substr .File.Dir 10 $hasil}}
-    
-            <div class="col-lg-4 col-md-6 col-sm-6 ">
-                <a href="/categories/{{ $word }}">
-                    <div class="our-team">
-                        <div class="picture">
-                            <img class="img-fluid" src="/img/{{ $word }}.svg" loading="lazy">
-                        </div>
-                        <div class="team-content">
-                            <h3 class="name">{{ $word }}</h3>
-                        </div>
-                        <ul class="social">
-                            <li></li>
+    {{ if eq .Permalink (printf "%s%s" .Site.BaseURL "tutorials/") }}
+        <main class="posts">
+                <div class="row">
+                    <ul id="all-tags">
+                    {{ range $name, $taxonomy := .Site.Taxonomies.tutorials }}      
+                    <div class="col-lg-4 col-md-6 col-sm-6 ">
+                        <a href="/tutorials/{{ $name }}">
+                            <div class="our-team">
+                                <div class="picture">
+                                    <img class="img-fluid" src="/img/{{ $name }}.svg" loading="lazy">
+                                </div>
+                                <div class="team-content">
+                                    <h3 class="name">{{ $name }}</h3>
+                                </div>
+                                <ul class="social">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                {{ end }}
+        </main>
+    {{ else }}
+        <div class="container">
+            <h1>{{ .Title }}</h1>    
+                {{- if .Content }}
+                    <div class="content">{{ .Content }}</div>
+                {{- end }}
+            </div>
+            <main class="posts-tutorials">
+            {{ $scratch := newScratch }}
+            {{ $scratch.Set "series" "xxx" }}
+            {{ range sort .Data.Pages "Params.series" }}
+                {{ if eq ($scratch.Get "series") .Params.series }}
+
+                {{ else }}
+                    {{ $scratch.Set "series" .Params.series }}
+                    <div class="posts-group">
+                        <div class="post-year">{{ $scratch.Get "series" }}</div>
+                        <ul class="posts-list">        
+                        {{ range sort (where $.Data.Pages "Params.series" ($scratch.Get "series")) "Params.date" "asc"}} 
+                            <li class="post-item">
+                                <a href="{{.Permalink}}">
+                                    {{ with .Params.cover }}
+                                        <img  class="lazy img-thumb"  alt="{{ . }}" src="/img/no-image.png" data-src="{{ . }}" loading="lazy" />
+                                    {{ else }}
+                                        <img  class="lazy img-thumb"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
+                                    {{ end }}
+                                    <span class="post-title">{{.Title}}</span>
+                                    <span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
                         </ul>
                     </div>
-                </a>
-            </div>
-            {{ end }}
-</main>
+                    {{ end }}
+            {{ end}}
+            </main>
+    {{ end }}
 {{ end }}

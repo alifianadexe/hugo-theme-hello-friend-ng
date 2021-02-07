@@ -1,17 +1,16 @@
 {{ define "main" }}
     <div class="container">
-        <div class="row">
-        {{- if .Content }}
-            <div class="content">{{ .Content }}</div>
-        {{- end }}
-
-        <div class="posts-menu" style="margin-top: 3em;">
+        <div class="posts-menu" style="margin-top: 2.5em;">
             <p class="subtitle fancy"><span><i>"fakta dan opini"</i></span></p>
         </div>
+        {{- if .Content }}
+            {{ .Content }}
+        {{- end }}      
+        <div class="grid-container">
         {{ $paginator := .Paginate (where .Pages "Params.status" "publish") 8 }}
         {{ range $paginator.Pages  }}
-            <div  class="col-lg-6 col-md-6 col-sm-12">
-                <article class="content post">
+                <div>
+                <article class="post">
                     <div class="row  release">
                         <a class="link" href="{{.Permalink}}">        
                             <div class="col-md-5 col-sm-5 release-img text-center">    
@@ -35,7 +34,6 @@
                             {{ end }}
                         </div>
                     </div>
-                     <hr>
                 </article>
             </div>
         {{ end }}
