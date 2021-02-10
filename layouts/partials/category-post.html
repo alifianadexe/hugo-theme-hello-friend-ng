@@ -8,7 +8,7 @@
             {{ range first 5 (.Site.Taxonomies.tags.wawasan.Pages) }}
             <div class="row">
                 <div class="col-6-lg category-post">
-                    <img class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
+                    <img alt="{{ .Title }}" class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
                     <a href="{{ .Permalink }}" alt="{{ .Title }}" class="title-thumb">{{ .Title }}</a>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             {{ range first 5 (.Site.Taxonomies.tags.opini.Pages) }}
             <div class="row">
                 <div class="col-6-lg category-post">
-                    <img class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
+                    <img alt="{{ .Title }}" class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
                     <a href="{{ .Permalink }}" alt="{{ .Title }}" class="title-thumb">{{ .Title }}</a>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             {{ range first 5 (.Site.Taxonomies.tags.serapan.Pages) }}
             <div class="row">
                 <div class="col-6-lg category-post">
-                    <img class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
+                    <img alt="{{ .Title }}" class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
                     <a href="{{ .Permalink }}" alt="{{ .Title }}" class="title-thumb">{{ .Title }}</a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             {{ range first 5 (.Site.Taxonomies.tags.internet.Pages) }}
             <div class="row">
                 <div class="col-6-lg category-post">
-                    <img class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
+                    <img alt="{{ .Title }}" class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
                     <a href="{{ .Permalink }}" alt="{{ .Title }}" class="title-thumb">{{ .Title }}</a>
                 </div>
             </div>

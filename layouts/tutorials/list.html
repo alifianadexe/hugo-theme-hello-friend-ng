@@ -23,6 +23,7 @@
         </main>
     {{ else }}
         <div class="container">
+            <img class="img-icon" src="/img/{{ lower .Title}}.svg" />
             <h1>{{ .Title }}</h1>    
                 {{- if .Content }}
                     <div class="content">{{ .Content }}</div>
