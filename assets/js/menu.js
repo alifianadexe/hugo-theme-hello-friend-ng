@@ -5,7 +5,7 @@ const menuHover = document.querySelector(".menu-hover");
 const overlay = document.querySelector(".overlay");
 const menu = document.querySelector(".menu");
 const subMenu = document.querySelector(".sub-menu")
-const mobileQuery = getComputedStyle(document.body).getPropertyValue("--phoneWidth");
+const mobileQuery = getComputedStyle(document.body).getPropertyValue("--tabletWidth");
 const isMobile = () => window.matchMedia(mobileQuery).matches;
 const isMobileMenu = () => {
   menuTrigger && menuTrigger.classList.toggle("hidden", !isMobile());

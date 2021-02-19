@@ -75,27 +75,34 @@
     position: absolute;
     margin-left: 0px;
     background-color: $light-background;
-    min-width: 160px;
+    min-width: 200px;
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     
     li{
       color: black;
-      padding: 12px 16px;
+      padding: 10px 16px;
       list-style-type: none;
       display: block;
       margin: 0;      
       a{
         display: flex;
         img {
-
           margin-left: 0;
           margin-right: .5em;
-          width: 1.2em;
+          width: 2.1em;
+        }
+        .dark-theme & {
+          color: $dark-color;
         }
       }
     }
+    
+    .dark-theme & {
+      background: $dark-background-secondary;
+    }
+
     @media #{$media-size-tablet} {
       display: block;
       box-shadow: none;
