@@ -11,7 +11,14 @@
 
 .social-media{
  margin-top: 1em;
-}
+  a{
+    margin-left: .5em;
+    margin-right: .5em;
+   }
+   span{
+     display: none;
+   }
+ }
 
 .img-logo{
     max-width: 100px;

@@ -36,7 +36,12 @@
             </div>
         </article>
 
-        
+        {{- with .Site.Params.social }}
+            <div class="social-media-blog">
+                {{ partial "social-icons.html" . }}
+            </div>
+        {{- end }}  
+
         <div class="ads-below">
             <hr>
             <p>😊 Mungkin Kalian Tertarik! 😊</p>
@@ -71,6 +76,7 @@
         <hr />
         {{ end }}
 
+        
         <div class="related-side">
             {{- partial "related.html" . -}}
         </div>

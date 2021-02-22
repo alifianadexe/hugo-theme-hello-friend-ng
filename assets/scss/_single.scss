@@ -161,10 +161,6 @@
       text-align: center;
     }
 
-    // li, ul{
-    //   list-style: outside none none;
-    // }
-
     li{
       font-weight: 700;
     }
@@ -349,6 +345,137 @@
 
 }
 
+.social-media-post{
+  text-align: center;
+  position: fixed;
+  display: block;
+  width: 4em;
+  top: 15%;
+  right: 10px;
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 110px;
+    font-size: smaller;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 130%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%; /* To the right of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  a{
+    margin:.75em;
+  }
+  
+  @media (max-width: 1100px) {
+    display: relative;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.social-media-blog{
+  text-align: center;
+  position: fixed;
+  display: block;
+  width: 4em;
+  top: 15%;
+  left: 10%;
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 110px;
+    font-size: smaller;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 415%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  a{
+    margin:.75em;
+  }
+  
+  @media (max-width: 1100px) {
+    display: relative;
+    position: relative;
+    width: 100%;
+  }
+}
+
 .related-side{
   width: 15%;
   position: fixed;
@@ -367,7 +494,7 @@
     }
   }
 
-  @media #{$media-size-tablet} {
+  @media (max-width: 1100px) {
     display: relative;
     position: relative;
     width: 100%;
