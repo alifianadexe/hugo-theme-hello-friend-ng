@@ -265,14 +265,15 @@ tr:nth-child(even) {
   text-align: center;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  flex: 1 auto;
-  align-items: center;
-  justify-content: center;
-  margin: 25px 0;
+.container-post{
+  margin-left : 20%;
+  @media #{$media-size-tablet} {
+    margin-left: 0;
+  }
+}
 
+.content {
+  margin: 25px 0;
   @media #{$media-size-phone} {
     margin-top: 0;
   }

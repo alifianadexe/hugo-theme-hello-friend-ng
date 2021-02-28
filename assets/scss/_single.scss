@@ -1,12 +1,12 @@
 .post {
-  width: 100%;
-  max-width: 800px;
+  max-width: 690px;
   text-align: left;
   padding: 20px;
   margin: 20px auto;
 
   &-tutorial{
-    margin-left: 19%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   &-date {
@@ -146,7 +146,7 @@
     background: #f9f9f9 none repeat scroll 0 0;
     border: 1px solid #aaa;
     display: table;
-    font-size:  100%;
+    font-size:  1em;
     margin-bottom: 1em;
     padding: 20px;
     width: auto;
@@ -345,6 +345,9 @@
 
 }
 
+.side-right-bar{
+}
+
 .social-media-post{
   text-align: center;
   position: fixed;
@@ -477,13 +480,8 @@
 }
 
 .related-side{
-  width: 15%;
-  position: fixed;
-  height: 100%;
-  z-index: 1;
-  top: 13%;
-  right: 10px;
-
+  position: relative;
+  margin: 20px;
   ul{
     margin: 0;
     li{
