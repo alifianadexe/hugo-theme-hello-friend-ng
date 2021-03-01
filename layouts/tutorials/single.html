@@ -53,12 +53,6 @@
                     {{ end }}
                 {{ end }}
             </div>
-    
-            {{- with .Site.Params.social }}
-                <div class="social-media-post">
-                    {{ partial "social-icons.html" . }}
-                </div>
-            {{- end }}  
 
             <div class="ads-below">
                 <hr>
@@ -144,11 +138,51 @@
             </div>
             </main>
             <div class="side-right-bar col-md-4">
+                {{- with .Site.Params.social }}
+                <div class="social-media-post">
+                    <p class="subtitle">Kepoin kita yuk!</p>
+                    {{ partial "social-icons.html" . }}
+                </div>
+                <hr>
+                {{- end }}
                 <div class="related-side">
+                    <h4>Masih hangat baru diupload</h4>
+                    {{- partial "newest.html" . -}}
+                </div>  
+                <div class="related-side">
+                    <h4>Atau mau yang serupa..</h4>
                     {{- partial "related.html" . -}}
                 </div>
-                <div class="">
-                    <div class="fb-page" data-lazy="true" data-href="https://www.facebook.com/anbidevofficial/" data-tabs="timeline" data-width="300" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/anbidevofficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/anbidevofficial/">AnbiDev</a></blockquote></div>
+                <hr>
+                <div class="related-sosial">
+                    <div class="fb-page" data-lazy="true" data-href="https://www.facebook.com/anbidevofficial/" data-tabs="timeline" data-width="400" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/anbidevofficial/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/anbidevofficial/">AnbiDev</a></blockquote></div>
+                </div>
+                <hr>
+                <div class="ads-side">
+                    <div class="adsense">
+                        <!-- After Content -->
+                        <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-3449944216687441"
+                        data-ad-slot="7126043333"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                        <p class="adsense__loading"><span>Loading&hellip;</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tag-list">
+                    <h3>Ayok! dipilih, dipilih..</h3>
+                    <ul class="tags">
+                        {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+                            {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                            <li><a href="{{ .RelPermalink }}" title="All pages with tag <i>{{$name}}</i>" class="tag" >{{$name}}<sup>{{$cnt}}</sup></a></li>
+                            {{end}}
+                        {{end}}
+                    </ul>
                 </div>
             </div>
         </div>
