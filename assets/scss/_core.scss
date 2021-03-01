@@ -268,7 +268,9 @@ tr:nth-child(even) {
 .container-post{
   margin-left : 20%;
   @media #{$media-size-tablet} {
-    margin-left: 0;
+    margin-left: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 }
 
