@@ -47,23 +47,28 @@ $(window).scroll(function (event) {
     lastScrollTop = st;
   }
 
-let fixmeTop = $('.ads-side').offset().top;
-let fixmeBottom = $('.ads-below').offset().top;       
-fixmeTop += 300;
 
-$(window).scroll(function() {                  
-  if(!isMobile()){
-    var currentScroll = $(window).scrollTop(); 
-        if (currentScroll >= fixmeTop && currentScroll <= fixmeBottom) {           
-        $('.ads-side').css({                   
-            position: 'fixed',
-            top: '75px'
-        });
-    } else {                                   
-        $('.ads-side').css({                
-            position: 'relative',
-            marginLeft:'20px'
-        });
+const theAds = $('.ads-side');
+
+if(theAds.offset()){
+  let fixmeTop = theAds.offset().top;
+  let fixmeBottom = $('.ads-below').offset().top;       
+  fixmeTop += 300;
+
+  $(window).scroll(function() {                  
+    if(!isMobile()){
+      var currentScroll = $(window).scrollTop(); 
+          if (currentScroll >= fixmeTop && currentScroll <= fixmeBottom) {           
+            theAds.css({                   
+              position: 'fixed',
+              top: '75px'
+          });
+      } else {                                   
+            theAds.css({                
+              position: 'relative',
+              marginLeft:'20px'
+          });
+      }
     }
-  }
-});
+  });
+}
