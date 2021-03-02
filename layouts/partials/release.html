@@ -1,27 +1,27 @@
 
 <div class="box-post" id="release">
-    <div class="row">
+    <div class="grid-container grid-container-index">
         {{ $paginator := .Paginate (where .Site.RegularPages "Params.status" "publish") 6}}
         {{ range $paginator.Pages  }}
-        <div class="col-lg-4 col-md-4 col-sm-12">
-                <a href="{{.Permalink}}">        
-                    <div class="row release">
-                            {{ with .Params.cover }}
-                            <div class="col-md-6 col-sm-6 release-img">    
-                                <img  class="lazy post-cover"  alt="{{ . }}" src="/img/no-image.png" data-src="{{ . }}" loading="lazy" />
-                            </div>
-                            {{ else }}
-                            <div class="col-md-6 col-sm-6 release-img">
-                                <img  class="lazy post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
-                            </div>    
-                            {{ end }}
-                            <div class="col-md-6 col-sm-6 release-info">
-                                <h5 class="release-title">{{.Title}}</h5>
-                                <p class="release-day"><b>||</b> <i>{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</i></p>
-                                <p>{{ .Params.Description }}</p>
-                            </div>
-                    </div>
-                </a>
+        <div>
+            <a href="{{.Permalink}}">        
+                <div class="row release">
+                        {{ with .Params.cover }}
+                        <div class="col-md-6 col-sm-6 release-img">    
+                            <img  class="lazy post-cover"  alt="{{ . }}" src="/img/no-image.png" data-src="{{ . }}" loading="lazy" />
+                        </div>
+                        {{ else }}
+                        <div class="col-md-6 col-sm-6 release-img">
+                            <img  class="lazy post-cover"  alt="Tolong Temukan Si Gambar :(" src="/img/no-image.png" loading="lazy">
+                        </div>    
+                        {{ end }}
+                        <div class="col-md-6 col-sm-6 release-info">
+                            <h5 class="release-title">{{.Title}}</h5>
+                            <p class="release-day"><b>||</b> <i>{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</i></p>
+                            <p>{{ .Params.Description }}</p>
+                        </div>
+                </div>
+            </a>
         </div>
         {{ end }}
     </div>
