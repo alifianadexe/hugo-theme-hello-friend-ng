@@ -9,6 +9,10 @@
     margin-right: 0;
   }
 
+  &-blog{
+    max-width: 750px;
+  }
+
   &-date {
     &:after {
       content: '—';
@@ -345,7 +349,7 @@
 }
 
 .side-right-bar{
-  
+  text-align: left;
 }
 
 .social-media-post{
@@ -417,7 +421,7 @@
   display: block;
   width: 4em;
   top: 15%;
-  left: 10%;
+  left: 2%;
 
   .tooltip {
     position: relative;
@@ -483,7 +487,7 @@
     margin: 0;
     li{
       margin-bottom: 1em;
-      font-size: 0.75em;
+      font-size: 0.8em;
       list-style-type: square;
       
     }
