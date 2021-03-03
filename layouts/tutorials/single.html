@@ -78,9 +78,11 @@
             <div class="post-info">
                 <h4>Referensi</h4>
                 <ul>
-                    {{- range . -}}
-                        <a href="{{ . }}"><li>{{ . }}</li></a>
-                    {{- end -}}
+                   <li>
+                        {{- range . -}}
+                            <a href="{{ . }}">{{ . }}</a>
+                        {{- end -}}
+                    </li>
                 </ul>
             </div>
             <hr />
