@@ -40,7 +40,7 @@
             {{ $title := .Title }}
             {{ $series := $.Page.Params.series }}
             <div class="sidenav">
-                <h4>{{ $series }}</h4>
+                <h3>{{ $series }}</h3>
                 {{ range $ind,$art := $.Site.Pages.ByDate }}
                     {{ if eq $art.Params.series $series }}
                         {{ if eq .Params.status "publish" }}
