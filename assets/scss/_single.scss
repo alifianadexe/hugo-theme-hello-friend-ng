@@ -477,6 +477,9 @@
     display: relative;
     position: relative;
     width: 100%;
+    .tooltiptext{
+      display: none;
+    }
   }
 }
 

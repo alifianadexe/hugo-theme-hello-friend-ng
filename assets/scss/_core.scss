@@ -193,20 +193,11 @@ blockquote {
   margin: 20px;
   padding: 10px 20px;
   font-style: italic;
+  font-weight: 500;
 
   @media #{$media-size-phone} {
     margin: 10px;
     padding: 10px;
-  }
-
-  &:before {
-    content: '”';
-    font-family: Georgia, serif;
-    font-display: auto;
-    font-size: 3.875rem;
-    position: absolute;
-    left: -40px;
-    top: -20px;
   }
 
   p:first-of-type {
