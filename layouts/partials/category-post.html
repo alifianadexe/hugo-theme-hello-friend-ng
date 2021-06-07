@@ -67,5 +67,21 @@
                 <a href="/tags/internet" alt="Lebih Banyak">Lebih Banyak »</a>
             </div>
         </div>
-    </div>
+        <div class="col-md-4 col-md-12 text-center category">
+          <div class="posts-menu">
+              <p class="subtitle fancy"><span><i>"C"</i></span></p>
+          </div>
+          {{ range first 5 (.Site.Taxonomies.tags.c.Pages) }}
+          <div class="row">
+              <div class="col-6-lg category-post">
+                  <img alt="{{ .Title }}" class="img-thumb lazy" src="/img/no-image.png" data-src="{{ .Params.cover }}" > 
+                  <a href="{{ .Permalink }}" alt="{{ .Title }}" class="title-thumb">{{ .Title }}</a>
+              </div>
+          </div>
+          {{- end }}
+          <div class="category-more">
+              <a href="/tags/c" alt="Lebih Banyak">Lebih Banyak »</a>
+          </div>
+      </div>
+  </div>
 </div>
